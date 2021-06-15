@@ -1,5 +1,5 @@
 {
-  "name": "@devboljs/learnstorybook-design-system-template",
+  "name": "learnstorybook-design-system-devboljs",
   "version": "0.1.0",
   "babel": {
     "presets": [
