@@ -1,11 +1,24 @@
 {
-  "name": "learnstorybook-design-system-template",
-  "version": "0.1.0",
-  "private": true,
+  "name": "learnstorybook-design-system-devboljs",
+  "version": "0.1.1",
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
+  "private": false,
   "dependencies": {
+    "@babel/cli": "^7.14.5",
+    "@storybook/addon-a11y": "^6.2.9",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "auto": "^10.29.3",
     "polished": "^4.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -15,11 +28,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build-storybook-docs": "build-storybook -s public --docs",
+    "release": "auto shipit --base-branch=main"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +72,24 @@
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
     "chromatic": "^5.9.0",
+    "cross-env": "^7.0.3",
     "prettier": "2.3.1"
-  }
+  },
+  "description": "The Storybook design system tutorial is a subset of the full [Storybook design system](https://github.com/storybookjs/design-system/), created as a learning resource for those interested in learning how to write and publish a design system using best in practice techniques.",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxmcr/learnstorybook-design-system.git"
+  },
+  "keywords": [
+    "storybook",
+    "react",
+    "styled-components"
+  ],
+  "author": "devboljs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alxmcr/learnstorybook-design-system/issues"
+  },
+  "homepage": "https://github.com/alxmcr/learnstorybook-design-system#readme"
 }
